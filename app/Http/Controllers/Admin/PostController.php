@@ -54,8 +54,10 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:60',
             'content' => 'required',
+
             'category_id' => 'nullable|exists:categories_id',
             // ovvero category_id deve essere messo a null o deve esistere e preso dalla categoria di appartenenza
+            
             'image' => 'nullable|image'
             // 'image' perché nell’input abbiamo scritto name='image'
             // 'nullable|image' -> nullable così non siamo obbligati ad inserire l'immagine 
