@@ -54,10 +54,11 @@
           </select>
         </div>
 
+      
 
         <div class="mb-3">
             <label for="img" class="form-label">Immagine</label>
-            <input type="file" name="image" class="form-control-label
+            <input type="file" id="img" name="image" class="form-control-label
             @error('image')
             is-invalid
             @enderror">

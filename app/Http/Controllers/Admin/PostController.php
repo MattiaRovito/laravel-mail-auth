@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage; 
 
 // Usare il Model
 use App\Category;
@@ -53,13 +54,19 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:60',
             'content' => 'required',
-            'category_id' => 'nullable|exists:categories_id'
+            'category_id' => 'nullable|exists:categories_id',
             // ovvero category_id deve essere messo a null o deve esistere e preso dalla categoria di appartenenza
+            'image' => 'nullable|image'
+            // 'image' perché nell’input abbiamo scritto name='image'
+            // 'nullable|image' -> nullable così non siamo obbligati ad inserire l'immagine 
         ]);
 
 
         // prendere i dati
         $data = $request->all();
+
+        // prova
+        dd($data);
 
 
         // creare la nuova istanza con i dati ottenuti dalla request
