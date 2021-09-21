@@ -66,7 +66,7 @@ class PostController extends Controller
         $data = $request->all();
 
         // prova
-        dd($data);
+        // dd($data);
 
 
         // creare la nuova istanza con i dati ottenuti dalla request
@@ -100,6 +100,17 @@ class PostController extends Controller
         
         
         $new_post->fill($data);
+
+
+        // Se nel nostro array c'è l'immagine, allora puoi salvarla
+        if(array_key_exists('image', $data)){
+                //salviamo l’immagine e recuperiamo il path (il percorso).
+                $cover_path= Storage::put('covers', $data['image']);
+                // ora bisogna assegnare alla colonna cover tutto il path. quindi salviamo nella Colonna della tabella posts l'immagine con il suo percorso
+                $data['cover'] = $cover_path;
+        };
+            
+
 
 
 
