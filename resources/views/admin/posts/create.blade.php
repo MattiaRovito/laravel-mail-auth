@@ -54,21 +54,19 @@
           </select>
         </div>
 
-      
-
         <div class="mb-3">
-            <label for="img" class="form-label">Immagine</label>
-            <input type="file" id="img" name="image" class="form-control-label
-            @error('image')
-            is-invalid
-            @enderror">
+          <label for="img" class="form-label">Immagine</label>
+          <input id="img" type="file" name="image" class="form-control-file 
+          @error('image') 
+          is-invalid 
+          @enderror">
+          @error('image')
+               <div class="alert alert-danger">{{ $message }}</div>
+          @enderror 
 
-            @error('image')
-              <div class="alert alert-danger">
-                {{$message}}
-              </div>
-            @enderror
         </div>
+
+        
 
         <div class="mb-3">
           <label for="descrizione" class="form-label">Descrizione</label>
