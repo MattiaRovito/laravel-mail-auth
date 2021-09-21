@@ -2505,6 +2505,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePost',
   data: function data() {
@@ -38630,23 +38633,25 @@ var render = function() {
           _vm._v(_vm._s(_vm.post.content))
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          _vm._l(_vm.post.tags, function(tag) {
-            return _c(
-              "span",
-              { key: tag.id, staticClass: "badge badge-primary mx-2" },
-              [
-                _vm._v(
-                  "\n                   " +
-                    _vm._s(tag.name) +
-                    "\n\n               "
+        _vm.post.tags
+          ? _c(
+              "div",
+              _vm._l(_vm.post.tags, function(tag) {
+                return _c(
+                  "span",
+                  { key: tag.id, staticClass: "badge badge-primary mx-2 p-2" },
+                  [
+                    _vm._v(
+                      "\n                   " +
+                        _vm._s(tag.name) +
+                        "\n\n               "
+                    )
+                  ]
                 )
-              ]
+              }),
+              0
             )
-          }),
-          0
-        )
+          : _vm._e()
       ])
     ])
   ])
@@ -54741,7 +54746,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\Esercitazioni\mamp_public\php-laravel-odd-list\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\Esercitazioni\mamp_public\laravel-mail-auth\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
