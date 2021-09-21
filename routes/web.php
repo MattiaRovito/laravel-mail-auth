@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// modifica della route con any
-Route::get('/{any}', 'HomeController@index')->where('any', '.*');
 
 Auth::routes();
 
@@ -26,5 +24,7 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::resource('/posts', 'PostController');
 });
 
+// modifica della route con any
+Route::get('/{any}', 'HomeController@index')->where('any', '.*');
 
 
