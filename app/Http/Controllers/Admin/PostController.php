@@ -198,8 +198,9 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:60',
             'content' => 'required',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'nullable|exists:categories,id',
             // ovvero category_id deve essere messo a null o deve esistere e preso dalla categoria di appartenenza
+            'image' => 'nullable|image'
         ]);
 
         
@@ -237,7 +238,13 @@ class PostController extends Controller
             $data['slug'] = $slug;
         }   
 
-
+        // Se nel nostro array c'è l'immagine, allora puoi salvarla
+        if(array_key_exists('image', $data)){
+            //salviamo l’immagine e recuperiamo il path (il percorso).
+            $cover_path= Storage::put('covers', $data['image']);
+            // ora bisogna assegnare alla colonna cover tutto il path. quindi salviamo nella Colonna della tabella posts l'immagine con il suo percorso
+            $data['cover'] = $cover_path;
+        };
        
         // vado a modificarli
         $post->update($data);
