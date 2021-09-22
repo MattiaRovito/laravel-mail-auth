@@ -2411,6 +2411,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Post",
   data: function data() {
@@ -2475,6 +2480,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -38476,6 +38484,15 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", [_vm._v(_vm._s(_vm.formatData(post.created_at)))]),
                 _vm._v(" "),
+                post.cover
+                  ? _c("div", [
+                      _c("img", {
+                        staticClass: "w-25",
+                        attrs: { src: post.cover, alt: post.title }
+                      })
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
                 _c("p", { staticClass: "card-text" }, [
                   _vm._v(_vm._s(_vm.truncate(post.content, 100)))
                 ]),
@@ -38628,6 +38645,10 @@ var render = function() {
                 "\n                Non è stata assegnata nessuna categoria\n            "
               )
             ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("img", { attrs: { src: _vm.post.cover, alt: _vm.post.title } })
+        ]),
         _vm._v(" "),
         _c("p", { staticClass: "card-text" }, [
           _vm._v(_vm._s(_vm.post.content))

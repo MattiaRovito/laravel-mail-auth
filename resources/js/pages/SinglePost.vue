@@ -12,6 +12,9 @@
                 <p class="card-text btn btn-danger" v-else>
                     Non è stata assegnata nessuna categoria
                 </p>
+                <div>
+                    <img :src="post.cover" :alt="post.title">
+                </div>
                 <p class="card-text">{{post.content}}</p>
               
                <div v-if="post.tags">

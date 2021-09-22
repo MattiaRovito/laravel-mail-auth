@@ -12,6 +12,11 @@
                 <div class="card-body">
                     <h5 class="card-title">{{post.title}}</h5>
                     <p>{{formatData(post.created_at)}}</p>
+
+                    <div v-if="post.cover">
+                        <img :src="post.cover" :alt="post.title" class="w-25">
+                    </div>
+                    
                     <p class="card-text">{{ truncate(post.content, 100) }}</p>
 
 
