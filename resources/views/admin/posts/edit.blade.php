@@ -61,7 +61,7 @@
         {{-- Nell'edit se si va a modificare un post che contiene già un'immagine, allora me lo visualizza --}}
         <div class="mb-3">
           @if($post->cover)
-            <img src="{{ asset('storage/' . $post->cover)}}" alt="">
+            <img src="{{ asset('storage/' . $post->cover)}}" alt="" class="w-25">
           @endif
         </div>
 
