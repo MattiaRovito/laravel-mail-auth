@@ -243,6 +243,10 @@ class PostController extends Controller
             //salviamo l’immagine e recuperiamo il path (il percorso).
             $cover_path= Storage::put('covers', $data['image']);
             // ora bisogna assegnare alla colonna cover tutto il path. quindi salviamo nella Colonna della tabella posts l'immagine con il suo percorso
+
+
+            
+
             $data['cover'] = $cover_path;
         };
        
@@ -270,6 +274,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+
+            Storage::delete($post->cover);
+
             $post->delete();
 
             // effettuo il detach();
